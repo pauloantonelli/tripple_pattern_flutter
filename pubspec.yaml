@@ -23,23 +23,29 @@ vars:
   get: fvm flutter pub get
   runner: fvm flutter pub run build_runner
 scripts:
-  mobx_build: $runner build
-  mobx_watch: $clean & $get & $runner watch
-  mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
+  clean: $clean
+  mobb: $runner build
+  mobx: $clean & $get & $runner watch --delete-conflicting-outputs
+  mobc: $clean & $get & $runner build --delete-conflicting-outputs
 
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-  flutter_triple: ^0.0.19
-  rx_notifier:
+  dartz: ^0.10.0-nullsafety.0
+  flutter_triple: ^0.0.25
+  mobx_triple: ^0.0.24
+  flutter_mobx: ^2.0.0-nullsafety.0
+  mobx: ^2.0.0-nullsafety.2
+  flutter_modular: ^3.0.0-nullsafety.27
+  flutter_modular_test: ^1.0.0-nullsafety.1
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-
 dev_dependencies:
+  mocktail: ^0.0.1-dev.3
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
