@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tripple/app/pages/counter_notifier_store/home_widget.dart';
 import 'package:tripple/app/pages/counter_rx_notifyer/counter_rx_notifyer.dart';
 
+import 'counter_mobx_store/counter_mobx_store_widget.dart';
 import 'counter_value_notify/counter_value_notify.dart';
 
 class PageWidget extends StatefulWidget {
@@ -36,6 +37,12 @@ class _PageWidgetState extends State<PageWidget> {
             children: [
               Text('Counter Notifier Store: '),
               HomeWidget(),
+            ],
+          ),
+          Row(
+            children: [
+              Text('CounterMobx Store: '),
+              CounterMobx(),
             ],
           ),
         ],
